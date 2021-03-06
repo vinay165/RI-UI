@@ -1,0 +1,28 @@
+.edit-student{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+
+    &__field-container{
+        padding: 6px;
+    }
+
+    &__field-label{
+        width: 30%;
+    }
+
+    &__field{
+        width: 60%;
+    }
+
+    &__footer{
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 24px;
+        border-top: 1px solid #dee2e6;
+    }
+
+    &__button{
+        width: 100px;
+    }
+}

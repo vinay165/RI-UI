@@ -1,0 +1,35 @@
+.k-table{
+    margin-top: 12px;
+
+    &__search{
+        margin-bottom: 2px !important;
+    }
+
+    &__search-icon{
+        padding: 0px 6px !important;
+        cursor: pointer;
+
+        & i{
+            font-size: 24px;
+        }
+    }
+
+    &__row-action{
+        padding: 9px 0px !important;
+    }
+
+    &__row-action-icon{
+        font-size: 20px;
+        margin-left: 12px;
+        cursor: pointer;
+        
+    }
+
+    &__row-action-delete{
+        color: red;
+    }
+
+    &__delete-modal-body{
+        padding: 24px;
+    }
+}
