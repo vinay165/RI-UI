@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Header from './Components/Header';
-import Table from './Components/Table';
+import Schools from './Components/Schools';
 import './App.scss';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <Header></Header>
       <Container>
-        <Table></Table>
+        <Schools></Schools>
       </Container>
     </>
   );
