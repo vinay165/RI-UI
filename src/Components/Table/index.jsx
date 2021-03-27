@@ -21,6 +21,8 @@ function TableComponent({
         Object.values(item).some(value => String(value).includes(searchText))
     ))
 
+    const tableHeaders = headers.filter(({ editOnly }) => !editOnly);
+
     return (
         <div className='k-table'>
             <div className="row">
@@ -40,7 +42,7 @@ function TableComponent({
             <Table responsive bordered hover>
                 <thead>
                     <tr>
-                        {headers.map((header, index) => (
+                        {tableHeaders.map((header, index) => (
                             <th key={index}>{header.label}</th>
                         ))}
                         <th>Action</th>
@@ -51,8 +53,8 @@ function TableComponent({
                         <>
                             {filteredData.map((item, index) => (
                                 <tr key={index}>
-                                    {headers.map((header, index) => (
-                                        <td key={index}>{item[header.key]}</td>
+                                    {tableHeaders.map((header, index) => (
+                                        <td key={index}>{header.render ? header.render(item) : item[header.key]}</td>
                                     ))}
                                     <td className="k-table__row-action">
                                         <Modal
@@ -66,7 +68,7 @@ function TableComponent({
                                                     headers={headers}
                                                     data={item}
                                                     {...item}
-                                                    onEdit={(values) => onEdit({ id: item.id, ...values })}
+                                                    onEdit={(values) => onEdit({ ...item, ...values })}
                                                     handleSubmit={closeModal}
                                                 />
                                             )} />
